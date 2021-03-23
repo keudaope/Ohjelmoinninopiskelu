@@ -15,4 +15,5 @@ function forLauseella(lause)
   console.log(lause[x]);
   }
 }
-forLauseella("Olipa kerran onnimanni");
+//forLauseella("Olipa kerran onnimanni");
+metodeilla();
