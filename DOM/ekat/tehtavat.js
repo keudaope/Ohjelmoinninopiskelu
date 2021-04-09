@@ -245,13 +245,32 @@ function vaihdaKuva()
 // niin silloin tapahtuu Jotakin
 // esimerkki löytyy esim.
 // https://www.w3schools.com/jsref/event_onmouseover.asp
-window.onload = boldatut();
-function boldatut()
+// Ensiksi valitaan kaikki lihavoidut sanat taulukkoon
+// sitten käydään taulukko läpi ja vaihdetaan fontin väri
+function korosta()
 {
-  var paksut = document.getElementsByTagName('strong');
-  //alert(paksut.length);
-  for(var x = 0; x < paksut.length; x++)
+  lihavoidut = document.getElementsByTagName('strong');
+  for (var i=0; i<lihavoidut.length; i++)
   {
-    paksut[x].style.backgroundColor = yellow;
+    lihavoidut[i].style.color = "red";
   }
+}
+
+// Kun hiiri poistuu, palautuu kirjain takaisin mustaksi
+function palauta()
+{
+  lihavoidut = document.getElementsByTagName('strong');
+  for (var i=0; i<lihavoidut.length; i++)
+  {
+    lihavoidut[i].style.color = "black";
+  }
+}
+// Tehtävä 13
+// esimerkki löytyy esim.
+// https://www.w3schools.com/jsref/event_onresize.asp
+function koonMuutos()
+{
+  var leveys = window.outerWidth;
+  var korkeus = window.outerHeight;
+  document.getElementById('vastaus').innerHTML = "Ikkunan leveys on: " + leveys + " ja korkeus on: " + korkeus;
 }
