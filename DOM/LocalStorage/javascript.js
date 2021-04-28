@@ -22,10 +22,20 @@ function listaa()
   {
     const avain = localStorage.key(i);
     const arvo = localStorage.getItem(avain);
-    pvSyotto.innerHTML += "<b>"+avain + "</b>: " + arvo + "<br/>";
+    console.log(avain + " " + arvo);
+    pvSyotto.innerHTML += "<b>"+avain + "</b>: &emsp;" + arvo
+    + "&emsp;<button type='button' id=" + avain + " onclick='poista(this)'>Poista tieto</button>"+ "<br/>";
     document.getElementById('syottoArvo').value = "";
     document.getElementById('syottoAvain').value = "";
      setTimeout(function(){ pvSyotto.innerHTML = ""; }, 10000);
 
   }
+}
+
+function poista(tama)
+{
+  const avain = tama.id;
+  //alert(avain);
+  localStorage.removeItem(avain);
+  location.reload();
 }
